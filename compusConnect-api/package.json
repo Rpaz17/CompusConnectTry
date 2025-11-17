@@ -6,7 +6,9 @@
     "start": "nodemon ./bin/www",
     "db:create" : "npx sequelize-cli db:create",
     "db:migrate" : "npx sequelize-cli db:migrate",
-    "db:m:undo" : "npx sequelize-cli db:migrate:undo"
+    "db:m:undo" : "npx sequelize-cli db:migrate:undo:all",
+    "db:seed" : "npx sequelize-cli db:seed:all",
+    "db:s:undo" : "npx sequelize-cli db:seed:undo:all"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
