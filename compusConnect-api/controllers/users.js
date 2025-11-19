@@ -48,8 +48,24 @@ const createNewUser = async (req, res) => {
 
 };
 
+const GetAllUsers = async (req, res) => {
+    try {
+        const users = await Usuarios.findAll();
+        res.status(200).json({
+            status: 'Success',
+            data: users
+        });
+    } catch (error) {
+        res.status(500).json({
+            status: 'Error',
+            message: error.message
+        });
+    }
+};
+
 
 module.exports = {
     createNewUser,
+    GetAllUsers,
 
 };
