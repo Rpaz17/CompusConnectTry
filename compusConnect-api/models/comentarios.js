@@ -33,15 +33,13 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'Comentarios',
   });
-  Comentarios.associate = models => {
-    Comentarios.hasOne(models.Publicaciones, 
-      { 
-        foreignKey: 'publicacionId' 
-      });
-    Comentarios.hasOne(models.Usuarios,
-      {
-        foreignKey: 'usuarioId'
-      });
+   Comentarios.associate = models => {
+    Comentarios.belongsTo(models.Publicaciones, { 
+      foreignKey: 'publicacionId'
+    });
+    Comentarios.belongsTo(models.Usuarios, {
+      foreignKey: 'usuarioId'
+    });
   }
   return Comentarios;
 };
